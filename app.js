@@ -1,4 +1,3 @@
-
 // Selectors
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
@@ -16,7 +15,6 @@ filterOption.addEventListener('click', filterTodo);
 
 
 // Functions
-
 function addTodo(event) {
     // prevent form from submiting
     event.preventDefault();
@@ -53,7 +51,6 @@ function addTodo(event) {
     todoInput.value = "";
 }
 
-
 function deleteCheck(e){
     const item = e.target;
 
@@ -74,7 +71,6 @@ function deleteCheck(e){
         todo.classList.toggle('completed');
     }
 }
-
 
 function filterTodo(e) {
     const todos = todoList.childNodes;
@@ -101,14 +97,12 @@ function filterTodo(e) {
     })
 }
 
-
 function saveLocalTodos(todo) {
     let todos = checkForLocalTodos();
 
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
-
 
 function getTodos() {
     let todos = checkForLocalTodos();
@@ -141,7 +135,6 @@ function getTodos() {
     });
 }
 
-
 function removeLocalTodos(todo) {
     let todos = checkForLocalTodos();
     
@@ -149,7 +142,6 @@ function removeLocalTodos(todo) {
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
-
 
 function checkForLocalTodos() {
     let todos;
